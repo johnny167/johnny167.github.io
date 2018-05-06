@@ -1,0 +1,82 @@
+* {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body {
+   background-image: url(https://images.alphacoders.com/551/5513.jpg);
+    
+}
+header {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+
+.container {
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+img {
+    max-width: 800px;
+    max-height: 600px;
+    width : auto;
+    height : auto;
+    margin : 10px;
+    transition : all 0.5s;
+    box-shadow: 10px 10px 10px grey;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+
+
+header ul {
+    text-align: left;
+}
+
+li {
+    display: inline-block;
+}
+
+#loginform {
+    text-align: center;
+    color: #FB6F38;
+    display: table;
+}
+
+#loginform p {
+    display: table-row;
+}
+
+
+#loginform input {
+    display: table-cell;
+    margin: 2px;
+}
+
+#loginform label { 
+    display: table-cell; 
+    text-align: right;
+}
+
+
+#ranges {
+    border: 5px solid #FFC3AB;
+    text-align: left;
+    color: #FB6F38;
+}
+.button {
+    cursor: pointer;
+}
+
+.btn btn-primary {
+    text-align: left;
+}
+footer {
+    text-align: center;
+}
