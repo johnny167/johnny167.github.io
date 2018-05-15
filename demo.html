@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/ct-paper.css" rel="stylesheet"/>
+        <link href="assets/css/demo.css" rel="stylesheet" /> 
+        <link href="personalstyle.css" rel="stylesheet" /> 
+        <!--     Fonts and icons     -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>        
+
+        <link rel="stylesheet" type="text/css" href="demostyle.css">
+    </head>
+    <body>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <img src="gamestate.png" width="90%">
+        </div>
+      
+        <div id="main">
+            <h2>GTO POKER DEMO UX</h2>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Navigate Game State</span>
+      
+      
+            <button class="collapsible">Search for combos</button>
+            <div class="content">
+                <button class="btn btn-default ">SS Unpaired</button>
+                <button class="btn btn-primary">DS Unpaired</button>
+                <button class="btn btn-info">SS Paired</button>
+                <button class="btn btn-success">DS Paired</button>
+                <button class="btn btn-warning">Double Paired</button>
+                <button class="btn btn-danger">SS Rundowns</button>
+                <button class="btn btn-default ">DS Rundowns</button>
+                <button class="btn btn-primary">SS One Gap</button>
+                <button class="btn btn-info">DS One Gap</button>
+                <button class="btn btn-success">AA</button>
+                <button class="btn btn-warning">KK</button>
+                <button class="btn btn-danger">Rainbow</button>
+                
+
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for combos..">
+                <ul id="myUL">
+                    <li><a href="#">JT89</a></li>
+                    <li><a href="#">T987</a></li>
+                    <li><a href="#">9876</a></li>
+                    <li><a href="#">8765</a></li>
+                    <li><a href="#">7654</a></li>
+                    <li><a href="#">6543</a></li>
+                    <li><a href="#">5432</a></li>
+                </ul>
+            </div>
+
+            <button class="collapsible">Visualization</button>
+            <div class="content">
+                <img src="chart.jpg" class="imagecentered">
+            </div>
+            <button class="collapsible">Categories</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="demoscript.js"></script>
+    </body>
+</html>
