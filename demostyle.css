@@ -51,7 +51,7 @@ body {
     background-color: #777;
     color: white;
     cursor: pointer;
-    padding: 18px;
+    padding: 10px;
     width: 100%;
     border: none;
     text-align: left;
@@ -65,7 +65,7 @@ body {
 
 .content {
     padding: 0 18px;
-    background-color: white;
+    background-color: black;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -106,8 +106,12 @@ body {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
 
+
+
 .btn {
     margin : 5px;
+    width: auto;
+    min-width: 50px;
 }
 
 .imagecentered {
@@ -115,4 +119,192 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+/* Nested Side Bar Menu
+	Project URL: http://www.dynamicdrive.com/style/csslibrary/item/nested_side_bar_menu/
+*/
+
+.nestedsidemenu {
+    
+    width: 58px;
+}
+
+
+/* Top Level Menu */
+.nestedsidemenu ul {
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+}
+
+/* Top level list items */
+.nestedsidemenu ul li {
+    position: relative;
+}
+
+/* Top level menu items link style */
+.nestedsidemenu ul li a, .nestedsidemenu ul li span {
+    display: block;
+    position: relative;
+    /* background of menu items (default state) */
+    /*background: #008c9e;*/
+    color: white;
+    padding: 0px 0px;
+    color: #2d2b2b;
+    text-decoration: none;
+}
+
+
+.nestedsidemenu ul li a:link, .nestedsidemenu ul li a:visited {
+    color: white;
+}
+
+/* Top level menu items link style on hover and when active */
+.nestedsidemenu ul li:hover > a {
+    /*background: #005f6b;*/
+}
+
+/* Sub ULs style */
+.nestedsidemenu ul li ul {
+    position: absolute;
+    left: -5000px;
+		top: 0px;
+    opacity: 0;
+    width: 200px;
+    visibility: hidden;
+    -webkit-transition: opacity .3s, visibility 0s .3s, left 0s .3s;
+    transition: opacity .3s, visibility 0s .3s, left 0s .3s;
+}
+
+/* First Sub Levels UL style on hover */
+.nestedsidemenu ul li:hover > ul {
+    visibility: visible;
+    left: 100%;
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+/* Sub level Menu list items (alters style from Top level List Items) */
+.nestedsidemenu ul li ul li {
+    display: list-item;
+    float: none;
+}
+
+/* 2nd and beyond Sub Levels vertical offset after 1st level sub menu */
+.nestedsidemenu ul li ul li ul {
+    top: 0px;
+    left: 100%;
+}
+
+/* Sub Levels link style on hover and when active */
+.nestedsidemenu ul ul li:hover > a {
+    /*background: #52616a;*/
+}
+
+/* Sub Levels UL style on hover */
+.nestedsidemenu ul ul li:hover > ul {
+    left: 100%;
+}
+
+/* Sub level menu links style */
+.nestedsidemenu ul li ul li a {
+    /*font: normal 14px 'Bitter', sans-serif;*/
+    padding: 0px;
+    margin: 0;
+    /*background: #4ea1d3;*/
+    border-right: none;
+    border-top-width: 0;
+}
+
+/* LIs with a sub UL style */
+.nestedsidemenu ul li > a {
+    /* add padding to accomodate arrow inside LIs */
+    padding-right: 25px;
+}
+
+/* LIs with NO sub UL style */
+.nestedsidemenu ul li > a:only-child {
+    /* undo padding for non submenu LIs */
+    padding-right: 10px;
+}
+
+/* LIs with a sub UL pseudo class */
+.nestedsidemenu ul li > a:after {
+    /* add arrow inside LIs */
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-left-color: #FFFFFF;
+    top: 40%;
+    right: 8px;
+}
+
+/* LIs with NO sub UL pseudo class */
+.nestedsidemenu ul li > a:only-child:after {
+    /* undo arrow for non submenu LIs */
+    display: none;
+}
+
+
+/* ####### responsive layout CSS ####### */
+
+@media (max-width: 923px) {
+    /* FIRST breaking point
+			Last top menu items' sub ULs should drop to the left (instead of right)
+			Change 1 to a different number to exclude/include more top menu items based on menu and max-width setting above
+		*/
+
+		.nestedsidemenu ul li:nth-last-of-type(-n+1) ul li:hover > ul {
+        left: -100%;
+    }
+}
+
+@media (max-width: 500px) {
+    /* SECOND breaking point 
+			For mobile and screen browser windows
+			Get Sub ULs to expand entire width of document and drop down
+			Changes menu reveal type from "visibility" to "display" to overcome bug. See comments below
+		*/
+    .nestedsidemenu{
+        width: 100%;
+    }
+    
+    .nestedsidemenu ul li > a:after {
+        /* add arrow inside LIs */
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        border: 5px solid transparent;
+        border-left-color: transparent;
+        border-top-color: #fff;
+        top: 40%;
+        right: 8px;
+    }
+
+	.nestedsidemenu ul li {
+        position: static;
+    }
+
+    .nestedsidemenu ul li ul {
+        width: 100%;
+        border-top: 2px solid rgba(0,0,0,.6);
+		/* change menu reveal type from "visibility" to "display". Former seems to cause browser to jump to top of page sometimes when menu header is tapped on */
+		display: none;
+    }
+
+    .nestedsidemenu ul li:hover > ul {
+		display: block;
+        left: 0 !important;
+        top: auto;
+        box-shadow: 0 0 12px gray;
+    }
+
+
 }
